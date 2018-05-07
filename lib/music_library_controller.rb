@@ -1,4 +1,6 @@
 class MusicLibraryController
+  attr_reader :path
+
   def initialize(path = "./db/mp3s")
     MusicImporter.new(path).import
   end
@@ -62,7 +64,6 @@ class MusicLibraryController
       when "play song"
         play_song
       end
-
     end
   end
 end
